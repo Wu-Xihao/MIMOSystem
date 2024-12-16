@@ -1,0 +1,17 @@
+.logo-title {
+    vertical-align: middle;
+    padding-left: 5px;
+    color:#3ec1d3;
+    font-size: 38px;
+    font-weight: bolder
+}
+.nav-title{
+    font-size: 20px;
+    font-weight: bolder;
+    color: #222831;
+}
+.meun-item{
+    font-size: 18px;
+    font-weight: bolder;
+    /*color: #52616b;*/
+}
