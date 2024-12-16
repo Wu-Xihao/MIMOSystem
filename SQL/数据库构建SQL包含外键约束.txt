@@ -1,0 +1,75 @@
+--病人表
+CREATE TABLE Patient (
+    PatientID INT AUTO_INCREMENT PRIMARY KEY, -- 病人编号 --主键
+    Name VARCHAR(50) NOT NULL,                -- 病人姓名
+    Password VARCHAR(255) NOT NULL,           -- 密码
+    PhoneNumber VARCHAR(15) NOT NULL,         -- 手机号
+    Gender ENUM('男', '女') NOT NULL,         -- 性别
+    BirthDate DATE NOT NULL                   -- 出生日期
+);
+
+--门诊医生表
+CREATE TABLE Doctor (
+    DoctorID INT AUTO_INCREMENT PRIMARY KEY,  -- 门诊医生编号 --主键
+    Name VARCHAR(50) NOT NULL,                -- 医生姓名
+    Password VARCHAR(255) NOT NULL            -- 密码
+);
+
+--化验医生表
+CREATE TABLE ExaminingPhysician (
+    PhysicianID INT AUTO_INCREMENT PRIMARY KEY, -- 化验医生编号 --主键
+    Name VARCHAR(50) NOT NULL,                  -- 化验医生姓名
+    Password VARCHAR(255) NOT NULL              -- 密码
+);
+
+--药品表
+CREATE TABLE Drug (
+    DrugID INT AUTO_INCREMENT PRIMARY KEY,  -- 药品编号 --主键
+    Name VARCHAR(100) NOT NULL,             -- 药品名称
+    Description TEXT                        -- 药品介绍
+);
+
+--化验单表
+CREATE TABLE Paper (
+    PaperID INT AUTO_INCREMENT PRIMARY KEY,   -- 化验单编号 --主键
+    RBC DOUBLE NOT NULL,             -- 红细胞计数
+    WBC DOUBLE NOT NULL,           -- 白细胞计数
+    BASON DOUBLE NOT NULL,           -- 嗜碱性粒细胞计数
+    LYMPHN DOUBLE NOT NULL,           -- 淋巴细胞计数
+    HGB DOUBLE NOT NULL,           -- 血红蛋白
+    PLT DOUBLE NOT NULL,           -- 血小板计数
+    MONON DOUBLE NOT NULL,           -- 单核细胞计数
+    EON DOUBLE NOT NULL,           -- 嗜酸性粒细胞计数
+    PCT DOUBLE NOT NULL,           -- 血小板积压
+    HCT DOUBLE NOT NULL,           -- 红细胞积压
+    NEUT DOUBLE NOT NULL,           -- 中性粒细胞计数
+    PhysicianID INT NOT NULL,                 -- 化验医生编号
+    FOREIGN KEY (PhysicianID) REFERENCES ExaminingPhysician(PhysicianID) --外键约束
+    ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+--化验单-药品关联表
+CREATE TABLE Paper_Drug (
+    PaperDrugID INT AUTO_INCREMENT PRIMARY KEY, -- 唯一标识 --主键
+    PaperID INT NOT NULL,                       -- 化验单编号
+    DrugID INT NOT NULL,                        -- 药品编号
+    FOREIGN KEY (PaperID) REFERENCES Paper(PaperID) --外键约束
+    ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (DrugID) REFERENCES Drug(DrugID) --外键约束
+    ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- 门诊记录表
+CREATE TABLE ConsultationRecord (
+    RecordID INT AUTO_INCREMENT PRIMARY KEY,  -- 唯一标识 --主键
+    PatientID INT NOT NULL,                   -- 病人编号
+    DoctorID INT NOT NULL,                    -- 门诊医生编号
+    PaperID INT NOT NULL,                     -- 化验单编号
+    Status ENUM('待化验', '待开药', '结束') NOT NULL, -- 状态
+    FOREIGN KEY (PatientID) REFERENCES Patient(PatientID) --外键约束
+    ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (DoctorID) REFERENCES Doctor(DoctorID) --外键约束
+    ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (PaperID) REFERENCES Paper(PaperID) --外键约束
+    ON DELETE CASCADE ON UPDATE CASCADE
+);
