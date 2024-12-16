@@ -1,0 +1,14 @@
+-- User表建立level与birthDate索引快速查询与计算
+CREATE INDEX idx_name ON User(name);
+CREATE INDEX idx_level ON User(level);
+CREATE INDEX idx_birthDate ON User(birthDate);
+
+-- Drug表对name建立索引快速查询
+CREATE INDEX idx_name ON Drug(name);
+
+-- Record 表对状态与日期建立索引
+CREATE INDEX idx_status ON Record(status);
+CREATE INDEX idx_createDate ON Record(createDate);
+
+-- recordDrug 表建立索引快速查询
+CREATE INDEX idx_recordID ON recordDrug(recordID);

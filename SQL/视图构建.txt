@@ -1,0 +1,79 @@
+-- 登录辅助视图
+CREATE VIEW LoginView AS
+SELECT 
+    userID,
+    pwd,
+    level
+FROM User;
+
+-- 病人信息视图，适用于管理员
+CREATE VIEW PatientInfoView AS
+SELECT 
+    userID,
+    name,
+    gender,
+    birthDate,
+    TIMESTAMPDIFF(YEAR, birthDate, CURDATE()) AS age -- 计算年龄
+FROM User
+WHERE level = '病人';
+
+-- 医生信息视图，适用于管理员等
+CREATE VIEW DoctorInfoView AS
+SELECT 
+    userID,
+    name,
+    gender,
+    birthDate,
+    TIMESTAMPDIFF(YEAR, birthDate, CURDATE()) AS age -- 计算年龄
+FROM User
+WHERE level = '医生';
+
+-- 管理员信息视图，适用于管理员
+CREATE VIEW AdminInfoView AS
+SELECT 
+    userID,
+    name,
+    gender,
+    birthDate,
+    TIMESTAMPDIFF(YEAR, birthDate, CURDATE()) AS age -- 计算年龄
+FROM User
+WHERE level = '管理员';
+
+-- 病人对应的记录 ID 视图，关系反转
+CREATE VIEW PatientRecordView AS
+SELECT 
+    patientID AS userID,
+    recordID
+FROM Record;
+
+-- 医生对应记录ID视图，关系反转
+CREATE VIEW DoctorRecordView AS
+SELECT 
+    doctorID AS userID,
+    recordID
+FROM Record;
+
+-- 病人对应的化验单 ID 视图，关系抽取
+CREATE VIEW PatientPaperView AS
+SELECT 
+    patientID AS userID,
+    paperID
+FROM Record
+WHERE paperID IS NOT NULL;
+
+-- 医生对应的化验单 ID 视图，关系抽取
+CREATE VIEW DoctorPaperView AS
+SELECT 
+    doctorID AS userID,
+    paperID
+FROM Record
+WHERE paperID IS NOT NULL;
+
+--  用户正在服用的药物视图，关系抽取
+CREATE VIEW UserDrugView AS
+SELECT 
+    r.patientID AS userID,
+    rd.drugID
+FROM recordDrug rd
+JOIN Record r ON rd.recordID = r.recordID;
+
