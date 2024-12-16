@@ -65,6 +65,7 @@ CREATE TABLE ConsultationRecord (
     PatientID INT NOT NULL,                   -- 病人编号
     DoctorID INT NOT NULL,                    -- 门诊医生编号
     PaperID INT NOT NULL,                     -- 化验单编号
+    CreateDate DATE NOT NULL                   -- 创建日期
     Status ENUM('待化验', '待开药', '结束') NOT NULL, -- 状态
     FOREIGN KEY (PatientID) REFERENCES Patient(PatientID) --外键约束
     ON DELETE CASCADE ON UPDATE CASCADE,
