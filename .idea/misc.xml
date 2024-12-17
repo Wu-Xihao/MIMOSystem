@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="Carpooling" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Carpooling" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="MedicalKG" project-jdk-type="Python SDK" />
 </project>
