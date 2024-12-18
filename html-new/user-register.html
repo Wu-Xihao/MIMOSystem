@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,18 +28,41 @@
                 <p class="text-center">Your Social Campaigns</p>
                 <form>
                   <div class="mb-3">
-                    <label for="exampleInputtext1" class="form-label">姓名</label>
-                    <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                    <label for="ID" class="form-label">账号</label>
+                    <input type="text" class="form-control" id="ID">
                   </div>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">邮件地址</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="Name" class="form-label">昵称</label>
+                    <input type="text" class="form-control" id="Name">
                   </div>
-                  <div class="mb-4">
-                    <label for="exampleInputPassword1" class="form-label">密码</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  <div class="mb-3">
+                    <label for="Password" class="form-label">密码</label>
+                    <input type="password" class="form-control" id="Password">
                   </div>
-                  <a class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">注册</a>
+                  <div class="mb-3">
+                    <label for="PasswordAgain" class="form-label">确认密码</label>
+                    <input type="password" class="form-control" id="PasswordAgain">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Gender" class="form-label">性别</label>
+                    <select class="form-select" id="Gender">
+                      <option selected>男</option>
+                      <option>女</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="Level"class="form-label">身份</label>
+                    <select class="form-select" id="Level">
+                      <option selected>病人</option>
+                      <option>医生</option>
+                      <option>管理员</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">出生日期</label>
+                    <input type="date" class="form-control" id="Birth">
+                  </div>
+                  <a class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" id="register-btn">注册</a>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">已经拥有账号？</p>
                     <a class="text-primary fw-bold ms-2" href="./user-login.html">登录</a>
@@ -54,6 +77,7 @@
   </div>
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/user-register.js"></script>
 </body>
 
 </html>

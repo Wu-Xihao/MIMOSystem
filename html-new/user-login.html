@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,12 +28,20 @@
 <!--                <p class="text-center">Your Social Campaigns</p>-->
                 <form>
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">账号</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <label for="ID" class="form-label">账号</label>
+                    <input type="text" class="form-control" id="ID">
                   </div>
-                  <div class="mb-4">
-                    <label for="exampleInputPassword1" class="form-label">密码</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  <div class="mb-3">
+                    <label for="Password" class="form-label">密码</label>
+                    <input type="password" class="form-control" id="Password">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Level"class="form-label">身份</label>
+                    <select class="form-select" id="Level">
+                      <option>病人</option>
+                      <option>医生</option>
+                      <option>管理员</option>
+                    </select>
                   </div>
                   <div class="d-flex align-items-center justify-content-between mb-4">
                     <div class="form-check">
@@ -44,7 +52,7 @@
                     </div>
                     <a class="text-primary fw-bold" href="./user-register.html">忘记密码？</a>
                   </div>
-                  <a class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">登录</a>
+                  <a class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2" id="login-btn">登录</a>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-bold">新用户？</p>
                     <a class="text-primary fw-bold ms-2" href="./user-register.html">新建账号</a>
@@ -59,6 +67,8 @@
   </div>
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- 引入user-login文件 -->
+  <script src="assets/js/user-login.js"></script>
 </body>
 
 </html>
