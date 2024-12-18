@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -11,12 +11,11 @@
 </head>
 
 <body>
-  <!--  Body Wrapper -->
+  <!-- Body Wrapper -->
   <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
     data-sidebar-position="fixed" data-header-position="fixed">
     <!-- Sidebar Start -->
     <aside class="left-sidebar">
-      <!-- Sidebar scroll-->
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img" style="text-decoration: none;">
@@ -83,7 +82,7 @@
             </li>
             <hr>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
+              <a class="sidebar-link" href="./user-login.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-login"></i>
                 </span>
@@ -91,7 +90,7 @@
               </a>
             </li>
             <li class="sidebar-item">
-              <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
+              <a class="sidebar-link" href="./user-register.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-user-plus"></i>
                 </span>
@@ -100,27 +99,12 @@
             </li>
             <hr>
           </ul>
-          <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
-            <div class="d-flex">
-              <div class="unlimited-access-title me-3">
-                <h5 class="fw-semibold fs-6 mb-6 text-dark w-85">云康智问</h5>
-                <h7 class="fw-semibold fs-4 mb-6 text-dark w-85">——为你服务</h7>
-                <a href="#" class="btn btn-primary fs-2 fw-semibold lh-sm">开始探索！</a>
-              </div>
-              <div class="unlimited-access-img">
-                <img src="assets/images/backgrounds/rocket.png" alt="" class="img-fluid">
-              </div>
-            </div>
-          </div>
         </nav>
-        <!-- End Sidebar navigation -->
       </div>
-      <!-- End Sidebar scroll-->
     </aside>
-    <!--  Sidebar End -->
-    <!--  Main wrapper -->
+    <!-- Sidebar End -->
     <div class="body-wrapper">
-      <!--  Header Start -->
+      <!-- Header Start -->
       <header class="app-header">
         <nav class="navbar navbar-expand-lg navbar-light">
           <ul class="navbar-nav">
@@ -136,120 +120,86 @@
               </a>
             </li>
           </ul>
-          <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
-            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              <a href="./user-info.html" class="btn btn-primary">刷新</a>
-              <li class="nav-item dropdown">
-                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
-                  aria-expanded="false">
-                  <img src="assets/images/imgs/img.png" alt="" width="35" height="35" class="rounded-circle">
-                </a>
-                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
-                  <div class="message-body">
-                    <div class="message-body">
-                    <a href="./user-info.html" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-user fs-6"></i>
-                      <p class="mb-0 fs-3">个人中心</p>
-                    </a>
-                    <a href="./user-info.html" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">我的邮箱</p>
-                    </a>
-                    <a href="./user-info.html" class="d-flex align-items-center gap-2 dropdown-item">
-                      <i class="ti ti-list-check fs-6"></i>
-                      <p class="mb-0 fs-3">我的任务</p>
-                    </a>
-                    <a href="./user-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">退出登录</a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
         </nav>
       </header>
-      <!--  Header End -->
+      <!-- Header End -->
       <div class="container-fluid">
-        <div class="container-fluid">
-          <div class="card">
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="card">
-                    <img src="assets/images/imgs/img.png" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
-                    <div class="card-body">
-                      <p class="card-text">
-                        欢迎来到个人信息界面！
-                        点击下方按钮，完善或修改个人信息。
-                      </p>
-                      <button id="editButton" class="btn btn-primary" onclick="enableEditing()">完善/修改个人信息</button>
-                    </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <img src="assets/images/imgs/img.png" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
+                  <div class="card-body">
+                    <p class="card-text">
+                      欢迎来到个人信息界面！
+                      点击下方按钮，完善或修改个人信息。
+                    </p>
+                    <button id="editButton" class="btn btn-primary" onclick="enableEditing()">修改信息</button>
                   </div>
                 </div>
-                <div class="col-md-8">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title fw-semibold mb-4">个人基本信息</h5>
-                      <div class="card">
-                        <div class="card-body">
-                          <form id="infoForm" method="POST" action="/update_user">
-                            <div class="mb-3">
-                              <label class="form-label">ID账号</label>
-                              <input type="text" class="form-control" id="userID" name="userID" value="{{ user.userID }}" disabled>
-                            </div>
-                            <div class="mb-3">
-                              <label class="form-label">昵称</label>
-                              <input type="text" class="form-control" id="name" name="name" value="{{ user.name }}" disabled>
-                            </div>
-                            <div class="mb-3">
-                              <label class="form-label">密码</label>
-                              <input type="password" class="form-control" id="password" name="password" value="{{ user.password }}" disabled>
-                            </div>
-                            <div class="mb-3">
-                              <label class="form-label">性别</label>
-                              <select class="form-select" id="gender" name="gender" disabled>
-                                <option {{ 'selected' if user.gender == '男' else '' }}>男</option>
-                                <option {{ 'selected' if user.gender == '女' else '' }}>女</option>
-                              </select>
-                            </div>
-                            <div class="mb-3">
-                              <label class="form-label">角色</label>
-                              <select class="form-select" id="level" name="level" disabled>
-                                <option {{ 'selected' if user.level == '病人' else '' }}>病人</option>
-                                <option {{ 'selected' if user.level == '医生' else '' }}>医生</option>
-                                <option {{ 'selected' if user.level == '管理员' else '' }}>管理员</option>
-                              </select>
-                            </div>
-                            <div class="mb-3">
-                              <label class="form-label">出生日期</label>
-                              <input type="date" class="form-control" id="birth" name="birth" value="{{ user.birthDate }}" disabled>
-                            </div>
-                            <div class="mb-3 form-check">
-                              <input type="checkbox" class="form-check-input" id="check" disabled>
-                              <label class="form-check-label" for="check">已检查</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary" disabled>提交</button>
-                          </form>
-                        </div>
+              </div>
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title fw-semibold mb-4">个人基本信息</h5>
+                    <div class="card">
+                      <div class="card-body">
+                        <form id="infoForm" action="./user-info.html" method="POST">
+                          <div class="mb-3">
+                            <label class="form-label">ID账号</label>
+                            <input type="text" class="form-control" id="userID" name="userID" value="{{ user.userID }}" disabled>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">昵称</label>
+                            <input type="text" class="form-control" id="name" name="name" value="{{ user.name }}" disabled>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">密码</label>
+                            <input type="password" class="form-control" id="password" name="password" value="{{ user.password }}" disabled>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">性别</label>
+                            <select class="form-select" id="gender" name="gender" disabled>
+                              <option value="男" {% if user.gender == '男' %}selected{% endif %}>男</option>
+                              <option value="女" {% if user.gender == '女' %}selected{% endif %}>女</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">角色</label>
+                            <select class="form-select" id="level" name="level" disabled>
+                              <option value="病人" {% if user.level == '病人' %}selected{% endif %}>病人</option>
+                              <option value="医生" {% if user.level == '医生' %}selected{% endif %}>医生</option>
+                              <option value="管理员" {% if user.level == '管理员' %}selected{% endif %}>管理员</option>
+                            </select>
+                          </div>
+                          <div class="mb-3">
+                            <label class="form-label">出生日期</label>
+                            <input type="date" class="form-control" id="birth" name="birth" disabled>
+                          </div>
+                          <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="check" disabled>
+                            <label class="form-check-label" for="check">已检查</label>
+                          </div>
+                          <button type="button" class="btn btn-primary" id="submit-info-btn" onclick="submitForm()" disabled>提交</button>
+                        </form>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
   </div>
+
   <script src="assets/libs/jquery/dist/jquery.min.js"></script>
   <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/sidebarmenu.js"></script>
   <script src="assets/js/app.min.js"></script>
-  <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-  <script src="assets/libs/simplebar/dist/simplebar.js"></script>
-  <script src="assets/js/dashboard.js"></script>
+  <script src="assets/js/user-info.js"></script>
 </body>
 
 </html>
