@@ -1,0 +1,31 @@
+-- 备份。以下是在python中使用mysqldump进行备份
+import subprocess
+
+def backup_database(db_name, backup_file, user='root', password='123456'):
+    try:
+        command = f"mysqldump -u {user} -p{password} {db_name} > {backup_file}"
+        subprocess.run(command, shell=True, check=True)
+        print(f"Backup of {db_name} successful!")
+    except subprocess.CalledProcessError as e:
+        print(f"Backup failed: {e}")
+
+# 使用示例
+backup_database('MIMO', '/tmp/MIMO_backup.sql')
+
+--恢复。以下是在python中使用mysqldump进行恢复
+import subprocess
+
+def restore_database(backup_file, user='root', password='123456', db_name='MIMO'):
+    try:
+        # 构建 mysql 恢复命令
+        command = f"mysql -u {user} -p{password} {db_name} < {backup_file}"
+        
+        # 执行命令
+        subprocess.run(command, shell=True, check=True)
+        
+        print(f"Database {db_name} restored successfully from {backup_file}")
+    except subprocess.CalledProcessError as e:
+        print(f"Restore failed: {e}")
+
+# 使用示例
+restore_database('/tmp/MIMO_backup.sql')

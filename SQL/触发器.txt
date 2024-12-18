@@ -1,0 +1,44 @@
+-- 开药后自动修改记录为结束
+DELIMITER $$
+
+CREATE TRIGGER UpdateRecordStatusAfterPrescribeDrug
+AFTER INSERT ON recordDrug
+FOR EACH ROW
+BEGIN
+    -- 更新关联门诊记录的状态为"结束"
+    UPDATE Record
+    SET status = '结束'
+    WHERE recordID = NEW.recordID;
+END $$
+
+DELIMITER ;
+
+-- 删除病人时删除相关记录 -- 虽然设置了外键约束自动删除，但是这里还是添加一下
+DELIMITER $$
+
+CREATE TRIGGER DeletePatientCascade
+AFTER DELETE ON User
+FOR EACH ROW
+BEGIN
+    -- 删除病人相关的化验单
+    DELETE FROM Paper 
+    WHERE paperID IN (
+        SELECT paperID 
+        FROM Record 
+        WHERE patientID = OLD.userID
+    );
+
+    -- 删除病人相关的药物记录
+    DELETE FROM recordDrug 
+    WHERE recordID IN (
+        SELECT recordID 
+        FROM Record 
+        WHERE patientID = OLD.userID
+    );
+
+    -- 删除病人相关的门诊记录
+    DELETE FROM Record 
+    WHERE patientID = OLD.userID;
+END $$
+
+DELIMITER ;

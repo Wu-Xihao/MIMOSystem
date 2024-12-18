@@ -1,0 +1,75 @@
+-- 用户瞬间
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('梁杨', 'e10adc3949ba59abbe56e057f20f883e', '女', '管理员', '1956-06-30');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('何英', 'e10adc3949ba59abbe56e057f20f883e', '女', '医生', '1957-06-18');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('许超', 'e10adc3949ba59abbe56e057f20f883e', '男', '医生', '1983-10-19');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('王俊', 'e10adc3949ba59abbe56e057f20f883e', '男', '医生', '1944-11-05');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('张伟', 'e10adc3949ba59abbe56e057f20f883e', '男', '医生', '1985-07-23');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('郑玉华', 'e10adc3949ba59abbe56e057f20f883e', '女', '病人', '1976-01-24');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('孙军', 'e10adc3949ba59abbe56e057f20f883e', '女', '病人', '2000-08-23');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('陈丽', 'e10adc3949ba59abbe56e057f20f883e', '女', '病人', '1990-05-12');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('李娜', 'e10adc3949ba59abbe56e057f20f883e', '女', '病人', '2003-02-15');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('赵刚', 'e10adc3949ba59abbe56e057f20f883e', '男', '病人', '1997-12-01');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('黄玉', 'e10adc3949ba59abbe56e057f20f883e', '女', '病人', '1988-03-29');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('吴峰', 'e10adc3949ba59abbe56e057f20f883e', '男', '病人', '1978-11-10');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('周明', 'e10adc3949ba59abbe56e057f20f883e', '男', '病人', '1995-06-18');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('何欣', 'e10adc3949ba59abbe56e057f20f883e', '女', '病人', '1999-08-14');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('杨洋', 'e10adc3949ba59abbe56e057f20f883e', '男', '病人', '2000-01-30');
+
+-- 化验单数据
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (5.24, 8.55, 0.08, 2.9, 125.5, 432.23, 0.57, 0.14, 2.79);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (4.82, 4.76, 0.05, 2.68, 152.71, 242.81, 0.52, 0.31, 2.6);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (5.27, 10.11, 0.07, 2.16, 131.43, 317.62, 0.79, 0.34, 3.67);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (3.64, 9.18, 0.01, 4.4, 152.12, 213.3, 0.68, 0.29, 6.49);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (4.58, 5.66, 0.1, 1.14, 129.88, 315.01, 0.42, 0.46, 2.73);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (4.12, 6.23, 0.07, 2.89, 140.24, 310.56, 0.6, 0.25, 2.4);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (5.44, 7.61, 0.02, 3.1, 145.55, 410.43, 0.53, 0.3, 3.7);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (4.89, 6.88, 0.06, 3.22, 138.8, 290.6, 0.47, 0.2, 2.8);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (5.3, 9.11, 0.08, 2.96, 132.75, 310.89, 0.59, 0.3, 3.1);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (4.35, 8.5, 0.05, 2.2, 128.9, 320.4, 0.54, 0.28, 2.6);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (3.9, 7.22, 0.01, 3.0, 135.3, 280.0, 0.5, 0.2, 2.3);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (4.55, 8.19, 0.09, 2.7, 140.7, 330.2, 0.6, 0.15, 2.9);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (5.0, 9.0, 0.1, 2.5, 150.5, 400.0, 0.7, 0.3, 3.5);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (4.8, 7.9, 0.04, 3.1, 143.3, 375.4, 0.5, 0.24, 3.2);
+INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (5.2, 6.7, 0.06, 2.4, 147.6, 362.0, 0.55, 0.22, 3.4);
+
+-- 药品数据
+INSERT INTO Drug (name, description) VALUES 
+('阿司匹林', '用于缓解轻中度疼痛，如头痛、牙痛和肌肉酸痛，或用于预防心血管疾病的抗血小板治疗。'),
+('布洛芬', '一种非甾体抗炎药，用于缓解疼痛、退烧和减少炎症。'),
+('青霉素', '一种抗生素，用于治疗由细菌感染引起的多种感染，如咽喉炎、肺炎和皮肤感染。'),
+('头孢克肟', '第三代头孢菌素类抗生素，用于治疗呼吸道感染和尿路感染。'),
+('维生素C', '用于补充维生素C，增强免疫功能和抗氧化作用。'),
+('盐酸雷尼替丁', '用于治疗胃酸过多引起的胃溃疡和胃食管反流疾病。'),
+('阿莫西林', '一种广谱抗生素，适用于多种细菌感染，如呼吸道、耳部和尿路感染。'),
+('二甲双胍', '用于控制2型糖尿病患者的血糖水平。'),
+('硝酸甘油', '用于治疗或预防心绞痛（胸痛）。'),
+('氨咖黄敏胶囊', '用于缓解普通感冒和流感引起的发热、头痛、鼻塞和咽喉痛。'),
+('洛伐他汀', '用于降低胆固醇水平和预防心血管疾病。'),
+('碳酸钙', '用于治疗和预防钙缺乏症，如骨质疏松和低钙血症。'),
+('吲哚美辛', '一种非甾体抗炎药，用于缓解关节炎、肌肉痛和痛风。'),
+('奥美拉唑', '用于治疗胃溃疡和胃食管反流疾病，减少胃酸分泌。'),
+('地塞米松', '一种皮质类固醇，用于减少炎症反应，如过敏、哮喘和自身免疫性疾病。'),
+('硫酸氢氯吡格雷', '抗血小板药物，用于预防动脉粥样硬化引起的血栓事件。'),
+('依托红霉素', '一种大环内酯类抗生素，用于治疗呼吸道和皮肤的细菌感染。'),
+('普萘洛尔', '用于治疗高血压、心绞痛和偏头痛预防。'),
+('氯沙坦', '一种抗高血压药，用于降低血压和改善肾功能。'),
+('维生素D3', '用于治疗和预防维生素D缺乏症，促进钙吸收和骨骼健康。');
+
+-- 记录数据
+INSERT INTO Record (patientID, doctorID, paperID, createDate, status) VALUES 
+(6, 2, 1, '2024-12-01', '待开药'),
+(7, 3, 2, '2024-12-02', '结束'),
+(8, 4, 3, '2024-12-03', '待开药'),
+(9, 5, 4, '2024-12-04', '结束'),
+(10, 3, 5, '2024-12-05', '待开药');
+
+-- 记录药品
+INSERT INTO recordDrug (recordID, drugID, quantity) VALUES 
+(1, 1, 2),   -- 记录1开具阿司匹林2盒
+(1, 2, 1),   -- 记录1开具布洛芬1盒
+(2, 3, 1),   -- 记录2开具青霉素1盒
+(3, 4, 3),   -- 记录3开具头孢克肟3盒
+(4, 5, 1),   -- 记录4开具维生素C1盒
+(4, 6, 2),   -- 记录4开具盐酸雷尼替丁2盒
+(5, 7, 1),   -- 记录5开具阿莫西林1盒
+(5, 8, 2);   -- 记录5开具二甲双胍2盒

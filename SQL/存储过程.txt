@@ -1,0 +1,82 @@
+-- 注册病人用户
+DELIMITER $$
+
+CREATE PROCEDURE RegisterPatient (
+    IN p_name VARCHAR(50),
+    IN p_pwd VARCHAR(255),
+    IN p_gender ENUM('男', '女'),
+    IN p_birthDate DATE
+)
+BEGIN
+    DECLARE patient_id INT;
+
+    -- 插入新病人信息到 User 表
+    INSERT INTO User(name, pwd, gender, level, birthDate)
+    VALUES (p_name, p_pwd, p_gender, '病人', p_birthDate);
+
+END $$
+
+DELIMITER ;
+
+-- 注册医生用户
+DELIMITER $$
+
+CREATE PROCEDURE RegisterDoctor (
+    IN d_name VARCHAR(50),
+    IN d_pwd VARCHAR(255),
+    IN d_gender ENUM('男', '女'),
+    IN d_birthDate DATE
+)
+BEGIN
+    DECLARE patient_id INT;
+
+    -- 插入新艺术信息到 User 表
+    INSERT INTO User(name, pwd, gender, level, birthDate)
+    VALUES (d_name, d_pwd, d_gender, '医生', d_birthDate);
+
+END $$
+
+-- 更新病人的化验单
+DELIMITER $$
+
+CREATE PROCEDURE UpdatePatientPaper (
+    IN p_paperID INT,
+    IN p_RBC DOUBLE,
+    IN p_WBC DOUBLE,
+    IN p_BASON DOUBLE,
+    IN p_LYMPHN DOUBLE,
+    IN p_HGB DOUBLE,
+    IN p_PLT DOUBLE,
+    IN p_MONON DOUBLE,
+    IN p_EON DOUBLE,
+    IN p_NEUT DOUBLE
+)
+BEGIN
+    -- 检查是否存在该化验单
+    IF NOT EXISTS (SELECT 1 FROM Paper WHERE paperID = p_paperID) THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'PaperID does not exist';
+    ELSE
+        -- 更新现有的化验单
+        UPDATE Paper
+        SET RBC = p_RBC, WBC = p_WBC, BASON = p_BASON, LYMPHN = p_LYMPHN, HGB = p_HGB, PLT = p_PLT, MONON = p_MONON, EON = p_EON, NEUT = p_NEUT
+        WHERE paperID = p_paperID;
+    END IF;
+END $$
+DELIMITER ;
+
+-- 给病人开药 -- 无需修改记录状态，因为有触发器
+DELIMITER $$
+
+CREATE PROCEDURE PrescribeDrug (
+    IN p_recordID INT,     -- 传入的门诊记录ID
+    IN p_drugID INT,       -- 药品ID
+    IN p_description TEXT     -- 药物服用指南
+)
+BEGIN
+    -- 插入药物记录
+    INSERT INTO recordDrug(recordID, drugID, description)
+    VALUES (p_recordID, p_drugID, p_description);
+END $$
+
+DELIMITER ;
