@@ -15,6 +15,22 @@ INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('周明', 'e10adc
 INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('何欣', 'e10adc3949ba59abbe56e057f20f883e', '女', '病人', '1999-08-14');
 INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('杨洋', 'e10adc3949ba59abbe56e057f20f883e', '男', '病人', '2000-01-30');
 
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('梁杨', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '女', '管理员', '1956-06-30');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('何英', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '女', '医生', '1957-06-18');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('许超', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '男', '医生', '1983-10-19');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('王俊', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '男', '医生', '1944-11-05');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('张伟', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '男', '医生', '1985-07-23');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('郑玉华', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '女', '病人', '1976-01-24');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('孙军', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '女', '病人', '2000-08-23');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('陈丽', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '女', '病人', '1990-05-12');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('李娜', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '女', '病人', '2003-02-15');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('赵刚', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '男', '病人', '1997-12-01');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('黄玉', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '女', '病人', '1988-03-29');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('吴峰', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '男', '病人', '1978-11-10');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('周明', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '男', '病人', '1995-06-18');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('何欣', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '女', '病人', '1999-08-14');
+INSERT INTO User (name, pwd, gender, level, birthDate) VALUES ('杨洋', '$2b$12$aayMqPT6yPmeYBJsxk3MMei8NXENdtdXVzeHEbZe2GdWxozCVihai', '男', '病人', '2000-01-30');
+
 -- 化验单数据
 INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (5.24, 8.55, 0.08, 2.9, 125.5, 432.23, 0.57, 0.14, 2.79);
 INSERT INTO Paper (RBC, WBC, BASON, LYMPHN, HGB, PLT, MONON, EON, NEUT) VALUES (4.82, 4.76, 0.05, 2.68, 152.71, 242.81, 0.52, 0.31, 2.6);
