@@ -138,27 +138,29 @@
           </ul>
           <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
             <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
-              <a href="#" class="btn btn-primary">Download Free</a>
+              <a href="./user-info.html" class="btn btn-primary">刷新</a>
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  <img src="assets/images/profile/user-1.jpg" alt="" width="35" height="35" class="rounded-circle">
+                  <img src="assets/images/imgs/img.png" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body">
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                    <div class="message-body">
+                    <a href="./user-info.html" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-user fs-6"></i>
-                      <p class="mb-0 fs-3">My Profile</p>
+                      <p class="mb-0 fs-3">个人中心</p>
                     </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="./user-info.html" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-mail fs-6"></i>
-                      <p class="mb-0 fs-3">My Account</p>
+                      <p class="mb-0 fs-3">我的邮箱</p>
                     </a>
-                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                    <a href="./user-info.html" class="d-flex align-items-center gap-2 dropdown-item">
                       <i class="ti ti-list-check fs-6"></i>
-                      <p class="mb-0 fs-3">My Task</p>
+                      <p class="mb-0 fs-3">我的任务</p>
                     </a>
-                    <a href="./authentication-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                    <a href="./user-login.html" class="btn btn-outline-primary mx-3 mt-2 d-block">退出登录</a>
+                    </div>
                   </div>
                 </div>
               </li>
@@ -173,65 +175,60 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-md-4">
-                  <h5 class="card-title fw-semibold mb-4">个人信息</h5>
                   <div class="card">
-                    <img src="assets/images/products/s4.jpg" class="card-img-top" alt="...">
+                    <img src="assets/images/imgs/img.png" class="card-img-top" alt="..." style="width: 100%; height: 300px;">
                     <div class="card-body">
-                      <h5 class="card-title">昵称</h5>
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of
-                        the
-                        card's content.</p>
-                      <a href="#" class="btn btn-primary">修改个人信息</a>
+                      <p class="card-text">
+                        欢迎来到个人信息界面！
+                        点击下方按钮，完善或修改个人信息。
+                      </p>
+                      <button id="editButton" class="btn btn-primary" onclick="enableEditing()">完善/修改个人信息</button>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-8">
                   <div class="card">
                     <div class="card-body">
-                      <h5 class="card-title fw-semibold mb-4">修改基本信息</h5>
+                      <h5 class="card-title fw-semibold mb-4">个人基本信息</h5>
                       <div class="card">
                         <div class="card-body">
-                          <form>
+                          <form id="infoForm" method="POST" action="/update_user">
                             <div class="mb-3">
-                              <label for="exampleInputEmail1" class="form-label">邮箱地址</label>
-                              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-<!--                              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>-->
+                              <label class="form-label">ID账号</label>
+                              <input type="text" class="form-control" id="userID" name="userID" value="{{ user.userID }}" disabled>
                             </div>
                             <div class="mb-3">
-                              <label for="exampleInputPassword1" class="form-label">密码</label>
-                              <input type="password" class="form-control" id="exampleInputPassword1">
+                              <label class="form-label">昵称</label>
+                              <input type="text" class="form-control" id="name" name="name" value="{{ user.name }}" disabled>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">密码</label>
+                              <input type="password" class="form-control" id="password" name="password" value="{{ user.password }}" disabled>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">性别</label>
+                              <select class="form-select" id="gender" name="gender" disabled>
+                                <option {{ 'selected' if user.gender == '男' else '' }}>男</option>
+                                <option {{ 'selected' if user.gender == '女' else '' }}>女</option>
+                              </select>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">角色</label>
+                              <select class="form-select" id="level" name="level" disabled>
+                                <option {{ 'selected' if user.level == '病人' else '' }}>病人</option>
+                                <option {{ 'selected' if user.level == '医生' else '' }}>医生</option>
+                                <option {{ 'selected' if user.level == '管理员' else '' }}>管理员</option>
+                              </select>
+                            </div>
+                            <div class="mb-3">
+                              <label class="form-label">出生日期</label>
+                              <input type="date" class="form-control" id="birth" name="birth" value="{{ user.birthDate }}" disabled>
                             </div>
                             <div class="mb-3 form-check">
-                              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                              <label class="form-check-label" for="exampleCheck1">已检查</label>
+                              <input type="checkbox" class="form-check-input" id="check" disabled>
+                              <label class="form-check-label" for="check">已检查</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">提交</button>
-                          </form>
-                        </div>
-                      </div>
-                      <h5 class="card-title fw-semibold mb-4">基本信息</h5>
-                      <div class="card mb-0">
-                        <div class="card-body">
-                          <form>
-                            <fieldset disabled>
-                              <legend>Disabled fieldset example</legend>
-                              <div class="mb-3">
-                                <label for="disabledTextInput" class="form-label">Disabled input</label>
-                                <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-                              </div>
-                              <div class="mb-3">
-                                <label for="disabledSelect" class="form-label">Disabled select menu</label>
-                                <select id="disabledSelect" class="form-select">
-                                  <option>Disabled select</option>
-                                </select>
-                              </div>
-                              <div class="mb-3">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-                                </div>
-                              </div>
-<!--                              <button type="submit" class="btn btn-primary">提交</button>-->
-                            </fieldset>
+                            <button type="submit" class="btn btn-primary" disabled>提交</button>
                           </form>
                         </div>
                       </div>
@@ -240,6 +237,7 @@
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
