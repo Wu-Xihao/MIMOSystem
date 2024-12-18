@@ -31549,12 +31549,12 @@
       };
 
       // The flag is used to determine whether the resizing is used with a left-Point (first bit) and top-point (second bit)
-      // In this cases the temp-values are calculated differently
+      // In this cases the st-values are calculated differently
       ResizeHandler.prototype.snapToGrid = function (diffX, diffY, flag, pointCoordsY) {
 
           var temp;
 
-          // If `pointCoordsY` is given, a single Point has to be snapped (deepSelect). That's why we need a different temp-value
+          // If `pointCoordsY` is given, a single Point has to be snapped (deepSelect). That's why we need a different st-value
           if (typeof pointCoordsY !== 'undefined') {
               // Note that flag = pointCoordsX in this case
               temp = [(flag + diffX) % this.options.snapToGrid, (pointCoordsY + diffY) % this.options.snapToGrid];
