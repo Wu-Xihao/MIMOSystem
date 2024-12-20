@@ -1,0 +1,98 @@
+/*  基本样式 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 侧边栏样式 */
+aside {
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  height: 100vh;
+}
+
+aside h2 {
+  color: #4B5563;
+  padding: 1rem 0;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+aside ul li a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #6B7280;
+  text-decoration: none;
+  transition: all 0.2s;
+  border-radius: 0.5rem;
+}
+
+aside ul li a:hover {
+  background-color: #F3F4F6;
+  color: #3B82F6;
+}
+
+/* 主内容区域样式 */
+main {
+  margin-left: 16rem;
+  padding: 2rem;
+}
+
+main h2 {
+  color: #1F2937;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 按钮样式 */
+button {
+  transition: all 0.2s;
+}
+
+/* 表格样式 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #E5E7EB;
+}
+
+th {
+  background-color: #F9FAFB;
+  font-weight: 600;
+  color: #4B5563;
+}
+
+/* 卡片样式 */
+.card {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* 统计图表容器样式 */
+.chart-container {
+  background: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* 其他样式根据需要添加 */
