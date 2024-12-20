@@ -186,7 +186,34 @@ def update_user_info():
 
     return jsonify({'success': True})  # 返回更新成功的响应
 
+# 获取门诊记录详情及相关化验单信息
+@app.route('/get_record_details/<int:record_id>', methods=['GET'])
+def get_record_details(record_id):
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
 
+    # 获取门诊记录信息
+    cursor.execute("SELECT * FROM Record WHERE recordID = %s", (record_id,))
+    record = cursor.fetchone()
+
+    if record:
+        # 获取关联的化验单信息（如果有）
+        paper_details = None
+        if record['paperID']:
+            cursor.execute("SELECT * FROM Paper WHERE paperID = %s", (record['paperID'],))
+            paper_details = cursor.fetchone()
+
+        conn.close()
+
+        # 返回门诊记录和化验单信息（如果有）
+        return jsonify({
+            "success": True,
+            "record": record,
+            "paper": paper_details if paper_details else None  # 返回化验单信息，若存在
+        })
+    else:
+        conn.close()
+        return jsonify({"success": False, "message": "未找到该门诊记录"}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
